@@ -54,14 +54,51 @@ h2,h3{margin:0;}
 
 /* Responsive للشاشات الصغيرة */
 @media (max-width: 1024px) {
+.container{
+  max-width:1200px;
+  margin:30px auto;
+  display:flex;
+  flex-wrap:wrap;
+  box-shadow:0 15px 40px rgba(0,0,0,0.5);
+  border-radius:20px;
+  overflow:hidden;
+  background:linear-gradient(135deg,#111827,#1f2937);
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 0 0 280px; /* العرض الافتراضي */
+  padding: 40px;
+  background: rgba(17,24,39,0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(8px);
+  transition: all 0.4s ease;
+  min-width: 220px; /* أقل عرض ممكن */
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  padding: 40px;
+  min-width: 320px;
+}
+
+/* Responsive للشاشات الصغيرة */
+@media (max-width: 1024px) {
   .container {
-    flex-direction: column-reverse; /* هذا يجعل sidebar تحت المحتوى */
+    flex-direction: column; /* يحافظ على التصميم الأصلي */
   }
   .sidebar {
     width: 100%;
+    order: 2; /* يظهر بعد المحتوى */
     flex-direction: column;
     align-items: center;
     padding: 20px;
+  }
+  .main {
+    order: 1; /* يبقى المحتوى الرئيسي أولاً */
   }
   .sidebar img {
     width: 120px;
@@ -70,12 +107,10 @@ h2,h3{margin:0;}
   }
   .sidebar h2 {
     font-size: 1.3rem;
-    width: 100%;
     text-align: center;
   }
   .sidebar p {
     font-size: 0.95rem;
-    width: 100%;
     text-align: center;
     margin-bottom: 15px;
   }
