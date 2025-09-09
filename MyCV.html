@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>السيرة الذاتية - أكرم فؤاد الصالحي</title>
+
+<style>
+:root{
+  --bg:#0f172a;
+  --accent:#22d3ee;
+  --accent2:#06b6d4;
+  --text:#e5e7eb;
+  --panel:#1f2937;
+  --panel-light:#111827;
+  --stream-bg:rgba(34,211,238,0.15);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--text);}
+.container{max-width:1000px;margin:50px auto;display:flex;flex-wrap:wrap;box-shadow:0 15px 40px rgba(0,0,0,0.5);border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#111827,#1f2937);}
+.sidebar{width:280px;padding:40px;background:rgba(17,24,39,0.85);display:flex;flex-direction:column;align-items:center;backdrop-filter:blur(8px);}
+.sidebar img{width:140px;height:140px;border-radius:50%;border:4px solid var(--accent);object-fit:cover;margin-bottom:20px;box-shadow:0 0 20px var(--accent);}
+.sidebar h2{font-size:24px;margin-bottom:5px;text-align:center;color:#fff;}
+.sidebar p{font-size:14px;color:#9ca3af;text-align:center;margin-bottom:20px;}
+.sidebar h3{font-size:16px;margin-top:20px;border-bottom:1px solid #333;width:100%;padding-bottom:5px;margin-bottom:10px;}
+.sidebar ul{list-style:none;padding:0;width:100%;}
+.sidebar ul li{margin-bottom:12px;font-size:14px;}
+.main{flex:1;padding:40px;min-width:320px;}
+.main section{margin-bottom:35px;background:rgba(255,255,255,0.05);padding:20px;border-radius:15px;backdrop-filter:blur(6px);transition:all 0.6s ease;opacity:0;transform:translateY(50px);}
+.main section.visible{opacity:1;transform:translateY(0);}
+.main section h3{color:var(--accent);border-bottom:2px solid var(--accent);display:inline-block;padding-bottom:5px;margin-bottom:15px;font-size:18px;}
+.main section p, .main section ul{font-size:14px;line-height:1.7;}
+.main section ul{list-style:none;padding:0;}
+.main section ul li{position:relative;padding-left:18px;margin-bottom:10px;}
+.main section ul li::before{content:"•";position:absolute;left:0;color:var(--accent);}
+.streaming-box{background:var(--stream-bg);padding:20px;border-radius:15px;height:220px;overflow-y:auto;border:1px solid rgba(34,211,238,0.3);box-shadow:0 0 15px var(--accent);white-space:pre-wrap;}
+.streaming-box span{opacity:0;display:inline-block;animation:fadeIn 0.05s forwards;}
+@keyframes fadeIn{to{opacity:1;}}
+.tag{display:inline-block;background:rgba(34,211,238,0.15);color:var(--accent);padding:6px 14px;border-radius:25px;margin:4px;font-weight:600;transition:0.3s;}
+.tag:hover{background:var(--accent);color:#111827;transform:scale(1.1);}
+.footer{text-align:center;margin:30px 0;font-size:14px;color:#9ca3af;}
+@media(max-width:768px){
+  .container{flex-direction:column;}
+  .sidebar{width:100%;flex-direction:row;justify-content:space-around;padding:20px;}
+  .sidebar img{margin-bottom:0;}
+  .main{padding:25px;}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="sidebar">
+    <img src="me2.JPG" alt="صورة شخصية">
+    <h2>أكرم فؤاد الصالحي</h2>
+    <p>طالب تكنولوجيا المعلومات ومطور برمجيات</p>
+
+    <h3>معلومات الاتصال</h3>
+    <ul>
+      <li>الهاتف: 00967776549494</li>
+      <li>البريد: akramtoleb@gmail.com</li>
+      <li>الموقع: www.akram.com</li>
+    </ul>
+
+    <h3>المهارات</h3>
+    <ul>
+      <li>Java, Python, Flutter, Tkinter</li>
+      <li>SQL, Oracle, MySQL, SQLite, Access, SqfLite</li>
+      <li>Oracle Apex, Oracle Reports</li>
+      <li>Adobe Photoshop, Illustrator</li>
+      <li>Excel, PowerPoint</li>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Data Analysis, AI, Networking, QR Code, Linux</li>
+      <li>تصميم واجهات مستخدم وتجربة مستخدم فعّالة</li>
+    </ul>
+
+    <h3>اللغات</h3>
+    <ul>
+      <li>العربية: اللغة الأم</li>
+      <li>الإنجليزية: جيد في التقنية والبرمجة</li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <section class="reveal">
+      <h3>الملخص الشخصي</h3>
+      <p id="typing-text"></p>
+    </section>
+
+    <section class="reveal">
+      <h3>الأعمال والمشاريع</h3>
+      <ul>
+        <li>نظام محطات الكهرباء: نظام متكامل لإدارة المحطات والفواتير والاشتراكات.</li>
+        <li>نظام إدارة المستشفيات: إدارة بيانات المرضى والمواعيد والتقارير الطبية.</li>
+        <li>نظام الصيدلة: إدارة المبيعات والمخزون والوصفات الطبية مع تحليل البيانات.</li>
+        <li>نظام الكافتيريا (Web): إدارة الطلبات والمبيعات والمخزون عبر الويب بواجهة تفاعلية.</li>
+      </ul>
+    </section>
+
+    <section class="reveal">
+      <h3>الخبرات العملية</h3>
+      <ul>
+        <li>تطوير أنظمة باستخدام Java, Python, Flutter</li>
+        <li>إنشاء واجهات مستخدم تفاعلية باستخدام Flutter وTkinter</li>
+        <li>تحليل البيانات وإعداد التقارير باستخدام Excel, Access, PowerPoint</li>
+        <li>تطوير تطبيقات وتقارير باستخدام Oracle Apex وOracle Reports</li>
+        <li>تصميم ملفات Adobe Photoshop وIllustrator</li>
+        <li>تحليل QR Codes وإدارة أنظمة التتبع</li>
+        <li>الشبكات وأنظمة Linux لإدارة السيرفرات والتطبيقات</li>
+        <li>تطبيق مفاهيم الذكاء الاصطناعي وهياكل البيانات والبرمجة الكائنية</li>
+      </ul>
+    </section>
+
+    <section class="reveal">
+      <h3>الهوايات والاهتمامات</h3>
+      <ul>
+        <li>متابعة أحدث التقنيات والبرمجيات</li>
+        <li>تطوير مشاريع برمجية شخصية وعملية</li>
+        <li>تصميم أنظمة متكاملة لتسهيل الأعمال اليومية</li>
+      </ul>
+    </section>
+
+    <section class="reveal">
+      <h3>تطبيق Chat Bot</h3>
+      <div class="streaming-box" id="streaming-box"></div>
+    </section>
+  </div>
+</div>
+
+<footer class="footer">
+  © 2025 أكرم فؤاد الصالحي - جميع الحقوق محفوظة
+</footer>
+
+<script>
+// Typing effect
+const typingText = "طالب جامعي ومطور ومهندس برمجيات متعدد المهارات، متخصص في تطوير الأنظمة والتطبيقات العملية، إدارة قواعد البيانات، وتحليل البيانات. لدي خبرة واسعة في تصميم واجهات المستخدم التفاعلية، الذكاء الاصطناعي، هياكل البيانات، الشبكات، وتحليل نظم المعلومات. مهتم بابتكار حلول تقنية متكاملة وتحسين الأداء التقني للمشاريع والأنظمة.";
+let i=0;
+function type(){
+  if(i<typingText.length){
+    document.getElementById('typing-text').innerHTML+=typingText.charAt(i);
+    i++;
+    setTimeout(type,15);
+  }
+}
+window.addEventListener('load',type);
+
+// Scroll reveal
+const reveals=document.querySelectorAll('.reveal');
+function revealOnScroll(){
+  const triggerBottom=window.innerHeight*0.85;
+  reveals.forEach(section=>{
+    const top=section.getBoundingClientRect().top;
+    if(top<triggerBottom) section.classList.add('visible');
+  });
+}
+window.addEventListener('scroll',revealOnScroll);
+window.addEventListener('load',revealOnScroll);
+
+// Chat Bot Streaming لكل حرف
+const messages=[
+  "مرحبا بك في سيرتي الذاتية التفاعلية! ",
+  "أنا أكرم فؤاد الصالحي، طالب ومطور برمجيات. ",
+  "يمكنك متابعة مشاريعي وخبراتي مباشرة هنا. ",
+  "سأضيف تحديثات ومشاريع جديدة باستمرار. ",
+  "تطبيق Chat Bot للتفاعل والإجابة على استفساراتك. ",
+  "شكراً لزيارتك!"
+];
+
+let currentMessage=0;
+let currentChar=0;
+
+function streamCharByCharSmooth(){
+  const box = document.getElementById('streaming-box');
+  if(currentMessage < messages.length){
+    if(currentChar < messages[currentMessage].length){
+      box.textContent += messages[currentMessage][currentChar]; // اضافة حرف مباشرة
+      box.scrollTop = box.scrollHeight;
+      currentChar++;
+      setTimeout(streamCharByCharSmooth,50); // سرعة الحروف
+    } else {
+      currentMessage++;
+      currentChar = 0;
+      box.textContent += "\n"; // الانتقال للسطر التالي بعد انتهاء الرسالة
+      setTimeout(streamCharByCharSmooth,300); // تأخير قبل الرسالة التالية
+    }
+  }
+}
+
+window.addEventListener('load',streamCharByCharSmooth);
+</script>
+
+</body>
+</html>
