@@ -1,369 +1,1066 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>السيرة الذاتية - أكرم فؤاد الصالحي</title>
-  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>أكرم فؤاد الطالب الصالحي | تقنيات المعلومات وتطوير البرمجيات</title>
+
+  <!-- خطوط Google -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
     :root {
-      --bg: #0f172a;
-      --accent: #22d3ee;
-      --text: #e5e7eb;
-      --panel: #1f2937;
-      --panel-light: #111827;
-      --stream-bg: rgba(34,211,238,0.15);
-    }
-
-    body {
+   --bg:#0f172a;
+  --accent:#22d3ee;
+  --accent2:#06b6d4;
+  --panel: rgba(31, 55, 41, 0.85);
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+}
+    /* ================================
+       RESET & BASE STYLES
+       ================================ */
+    *,
+    *::before,
+    *::after {
       margin: 0;
       padding: 0;
-      font-family: 'Almarai', sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-family: 'Cairo', Tahoma, sans-serif;
+      font-size: 16px;
       line-height: 1.6;
+      color: #333;
     }
-
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: 30px auto;
-      border-radius: 20px;
-      overflow: hidden;
-      background: linear-gradient(135deg,#111827,#1f2937);
+    body {
+      background: #f5f7fa;
+      position: relative;
+      min-height: 100vh;
     }
-
-    .sidebar {
-      flex: 1 1 280px;
-      max-width: 280px;
-      padding: 40px;
-      background: rgba(17,24,39,0.85);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      backdrop-filter: blur(8px);
-      min-width: 0;
-    }
-
-    .main {
-      flex: 2 1 0;
-      padding: 40px;
-      min-width: 0;
-    }
-
-    .sidebar img {
-      width: clamp(80px, 20vw, 140px);
+    img {
+      display: block;
+      max-width: 100%;
       height: auto;
-      border-radius: 50%;
-      border: 4px solid var(--accent);
-      object-fit: cover;
-      margin-bottom: 20px;
-      box-shadow: 0 0 20px var(--accent);
     }
-
-    .sidebar h2,
-    .sidebar p,
-    .section-container h3,
-    .section-container p,
-    .section-container ul li {
-      font-size: clamp(12px, 1.2vw, 18px);
+    a {
+      text-decoration: none;
+      color: inherit;
     }
-
-    .sidebar h2 {
-      margin-bottom: 5px;
-      text-align: center;
-      color: #fff;
-    }
-
-    .sidebar p {
-      margin-bottom: 20px;
-      color: #9ca3af;
-      text-align: center;
-    }
-
-    .sidebar h3 {
-      width: 100%;
-      padding-bottom: 5px;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #333;
-      font-size: clamp(14px,1.2vw,18px);
-    }
-
-    .sidebar ul {
+    ul {
       list-style: none;
-      padding: 0;
-      width: 100%;
     }
-
-    .sidebar ul li {
-      margin-bottom: 12px;
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
     }
-
-    .section-container {
-      margin-bottom: 30px;
-      padding: 20px;
-      border-radius: 15px;
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(6px);
+    /* ================================
+       CSS VARIABLES
+       ================================ */
+    :root {
+      --clr-primary: #1f3a93;
+      --clr-secondary: #16a085;
+      --clr-light: #ffffff;
+      --clr-dark: #2c3e50;
+      --clr-gray: #bdc3c7;
+      --ff-main: 'Cairo', sans-serif;
+      --ff-alt: 'Roboto', sans-serif;
+      --transition: 0.3s ease-in-out;
+      --bp-xs: 480px;
+      --bp-sm: 768px;
+      --bp-md: 992px;
+      --bp-lg: 1200px;
+    }
+    
+    /* ================================
+       UTILITY CLASSES
+       ================================ */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 0;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: var(--clr-secondary);
+      color: var(--clr-light);
+      font-family: var(--ff-alt);
+      font-weight: 500;
+      border-radius: 4px;
+      transition: background var(--transition);
+    }
+    .btn:hover {
+      background: #12876c;
+    }
+    .section {
+      padding: 4rem 0;
+    }
+    .hidden {
       opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.5s ease;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
     }
-
-    .section-container.visible {
+    .visible {
       opacity: 1;
       transform: translateY(0);
     }
-
-    .section-container h3 {
-      color: var(--accent);
-      border-bottom: 2px solid var(--accent);
-      display: inline-block;
-      padding-bottom: 5px;
-      margin-bottom: 15px;
-    }
-
-    .section-container ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .section-container ul li {
-      position: relative;
-      padding-left: 18px;
-      margin-bottom: 10px;
-    }
-
-    .section-container ul li::before {
-      content: "•";
-      position: absolute;
+    /* ================================
+       HEADER & NAVIGATION
+       ================================ */
+    header {
+      position: fixed;
+      top: 0;
+      right: 0;
       left: 0;
-      color: var(--accent);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
     }
-
-    .streaming-box {
-      background: var(--stream-bg);
-      padding: 20px;
-      border-radius: 15px;
-      height: 220px;
-      overflow-y: auto;
-      border: 1px solid rgba(34,211,238,0.3);
-      box-shadow: 0 0 15px var(--accent);
-      white-space: pre-wrap;
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
     }
-
-    .footer {
+    header h1 {
+      font-family: var(--ff-alt);
+      color: var(--clr-primary);
+      font-size: 1.75rem;
+    }
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    nav a {
+      color: var(--clr-dark);
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+    nav a:hover {
+      color: var(--clr-secondary);
+    }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      width: 24px;
+      height: 18px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: var(--clr-dark);
+      border-radius: 2px;
+      transition: all var(--transition);
+    }
+    /* ================================
+       HERO SECTION
+       ================================ */
+    #hero {
+      background: linear-gradient(135deg, var(--clr-primary), var(--clr-secondary));
+      padding: 8rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 120px;
+      background: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'><path fill='%23f5f7fa' d='M0,224L1440,32L1440,320L0,320Z'/></svg>") no-repeat bottom;
+      background-size: cover;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .hero-photo {
+      border-radius: 15px 50px 15px   50px;
+      overflow: hidden;
+      /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); */
+       box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+       border:5px solid var(--accent);
+    }
+    .hero-photo img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .hero-intro h2 {
+      font-family: var(--ff-alt);
+      color: var(--clr-light);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .hero-intro p {
+      color: #ecf0f1;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .hero-intro .btn {
+      margin-top: 1.5rem;
+      background: var(--clr-light);
+      color: var(--clr-primary);
+    }
+    .hero-intro .btn:hover {
+      background: #fcfcfc;
+    }
+    /* ================================
+       SUMMARY SECTION
+       ================================ */
+    #summary {
+      background: var(--clr-light);
+    }
+    #summary .container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    #summary h2 {
+      color: var(--clr-primary);
+      margin-bottom: 1rem;
+    }
+    #summary p {
+      font-size: 1rem;
+      color: var(--clr-dark);
+    }
+    /* ================================
+       EDUCATION SECTION
+       ================================ */
+    #education h2 {
+      color: var(--clr-primary);
+      margin-bottom: 2rem;
+    }
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .edu-item {
+      background: var(--clr-light);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    }
+    .edu-item h3 {
+      font-family: var(--ff-alt);
+      color: var(--clr-secondary);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .edu-item p {
+      color: var(--clr-dark);
+      font-size: 0.95rem;
+    }
+    /* ================================
+       EXPERIENCE SECTION
+       ================================ */
+    #experience h2 {
+      color: var(--clr-primary);
+      margin-bottom: 2rem;
+    }
+    .timeline {
+      position: relative;
+      margin-left: 2rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--clr-secondary);
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 0;
+      width: 12px;
+      height: 12px;
+      background: var(--clr-secondary);
+      border-radius: 50%;
+    }
+    .exp-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-left: 1.5rem;
+    }
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: -11px;
+      top: 4px;
+      width: 8px;
+      height: 8px;
+      background: var(--clr-primary);
+      border-radius: 50%;
+    }
+    .exp-item h3 {
+      font-family: var(--ff-alt);
+      color: var(--clr-dark);
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+    .exp-item span {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--clr-gray);
+      margin-bottom: 0.5rem;
+    }
+    .exp-item p {
+      font-size: 0.95rem;
+      color: var(--clr-dark);
+      line-height: 1.4;
+    }
+    /* ================================
+       PROJECTS SECTION
+       ================================ */
+    #projects h2 {
+      color: var(--clr-primary);
+      margin-bottom: 2rem;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: var(--clr-light);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      transition: transform var(--transition), box-shadow var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+    .project-card h3 {
+      font-family: var(--ff-alt);
+      color: var(--clr-secondary);
+      margin-bottom: 0.75rem;
+      font-size: 1.2rem;
+    }
+    .project-card p {
+      color: var(--clr-dark);
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    .project-card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200px;
+      height: 200px;
+      background: rgba(22, 160, 133, 0.1);
+      border-radius: 50%;
+      transition: all var(--transition);
+    }
+    .project-card:hover::after {
+      top: -20%;
+      right: -20%;
+      width: 300px;
+      height: 300px;
+    }
+    /* ================================
+       SKILLS SECTION
+       ================================ */
+    #skills h2 {
+      color: var(--clr-primary);
+      margin-bottom: 2rem;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .skill-item {
+      background: var(--clr-light);
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    }
+    .skill-item span {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-family: var(--ff-alt);
+      color: var(--clr-dark);
+      font-size: 0.95rem;
+    }
+    .skill-bar {
+      width: 100%;
+      background: var(--clr-gray);
+      height: 0.75rem;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .skill-bar > div {
+      height: 100%;
+      background: var(--clr-secondary);
+      width: 0;
+      transition: width 1.2s ease-out;
+    }
+    /* ================================
+       LANGUAGES SECTION
+       ================================ */
+    #languages h2 {
+      color: var(--clr-primary);
+      margin-bottom: 2rem;
+    }
+    .lang-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .lang-item {
+      background: var(--clr-light);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
       text-align: center;
-      margin: 30px 0;
-      font-size: 14px;
-      color: #9ca3af;
     }
-
-    /* نقطة توقف من 1024px وما أقل */
-    @media (max-width: 1024px) {
-      .container {
-        flex-direction: column;
-      }
-      .sidebar {
-        flex: 1 1 100%;
-        max-width: none;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 20px;
-      }
-      .sidebar img {
-        margin-bottom: 0;
-      }
-      .main {
-        padding: 25px;
-      }
+    .lang-item h3 {
+      font-family: var(--ff-alt);
+      color: var(--clr-dark);
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
     }
-
-    /* نقطة توقف من 768px وما أقل */
-    @media (max-width: 768px) {
-      .sidebar {
+    .lang-item span {
+      font-size: 0.9rem;
+      color: var(--clr-secondary);
+    }
+    /* ================================
+       HOBBIES SECTION
+       ================================ */
+    #hobbies h2 {
+      color: var(--clr-primary);
+      margin-bottom: 2rem;
+    }
+    .hobbies-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+      justify-content: center;
+    }
+    .hobby-item {
+      background: var(--clr-light);
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+      font-size: 0.95rem;
+      color: var(--clr-dark);
+    }
+    /* ================================
+       CHATBOT SECTION
+       ================================ */
+    #chatbot {
+      background: var(--clr-light);
+    }
+    #chatbot h2 {
+      color: var(--clr-primary);
+      margin-bottom: 2rem;
+    }
+    .chatbot-container {
+      max-width: 600px;
+      margin: auto;
+      background: #ecf0f1;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+    .chat-window {
+      height: 400px;
+      overflow-y: auto;
+      padding: 1rem;
+      background: #fff;
+    }
+    .chat-window .message {
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+    .chat-window .message.user .text {
+      background: var(--clr-secondary);
+      color: var(--clr-light);
+      align-self: flex-end;
+    }
+    .chat-window .message.bot .text {
+      background: var(--clr-gray);
+      color: var(--clr-dark);
+      align-self: flex-start;
+    }
+    .chat-window .text {
+      padding: 0.5rem 1rem;
+      border-radius: 16px;
+      max-width: 80%;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    .chat-input {
+      display: flex;
+      gap: 0.5rem;
+      padding: 1rem;
+      background: #ecf0f1;
+    }
+    .chat-input input {
+      flex: 1;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--clr-gray);
+      border-radius: 20px;
+      font-size: 0.95rem;
+    }
+    .chat-input button {
+      background: var(--clr-primary);
+      color: var(--clr-light);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background var(--transition);
+    }
+    .chat-input button:hover {
+      background: #162e67;
+    }
+    /* ================================
+       CONTACT SECTION
+       ================================ */
+    #contact h2 {
+      color: var(--clr-primary);
+      margin-bottom: 2rem;
+    }
+    .contact-form {
+      background: var(--clr-light);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: auto;
+      display: grid;
+      gap: 1rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      padding: 0.75rem;
+      border: 1px solid var(--clr-gray);
+      border-radius: 4px;
+      font-size: 0.95rem;
+      font-family: var(--ff-main);
+      transition: border-color var(--transition);
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--clr-secondary);
+    }
+    .contact-form button {
+      align-self: center;
+      background: var(--clr-secondary);
+      color: var(--clr-light);
+      padding: 0.75rem 2rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: background var(--transition);
+    }
+    .contact-form button:hover {
+      background: #12876c;
+    }
+    /* ================================
+       FOOTER
+       ================================ */
+    footer {
+      background: var(--clr-dark);
+      color: var(--clr-light);
+      text-align: center;
+      padding: 1.5rem 0;
+      margin-top: 4rem;
+    }
+    footer p {
+      font-size: 0.9rem;
+      font-family: var(--ff-alt);
+    }
+    /* ================================
+       SCROLL-TO-TOP BUTTON
+       ================================ */
+    #scrollTop {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      background: var(--clr-secondary);
+      color: var(--clr-light);
+      padding: 0.75rem;
+      border-radius: 50%;
+      display: none;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      transition: transform var(--transition);
+      z-index: 900;
+    }
+    #scrollTop:hover {
+      transform: scale(1.1);
+    }
+    /* ================================
+       MEDIA QUERIES
+       ================================ */
+    @media (max-width: var(--bp-md)) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--clr-light);
         flex-direction: column;
         align-items: center;
-        padding: 15px;
+        justify-content: center;
+        gap: 2rem;
+        transition: right var(--transition);
       }
-      .main {
-        padding: 20px;
+      nav ul.open {
+        right: 0;
       }
-      .section-container {
-        padding: 15px;
+      .nav-toggle {
+        display: flex;
       }
     }
-
-    /* نقطة توقف من 480px وما أقل */
-    @media (max-width: 480px) {
-      body {
-        margin: 0 10px;
+    @media (max-width: var(--bp-sm)) {
+      #experience .timeline {
+        margin-left: 1rem;
+        padding-left: 0.5rem;
       }
-      .sidebar img {
-        width: 100px;
+      #experience .exp-item {
+        padding-left: 1rem;
       }
-      .section-container h3 {
-        font-size: 1.2em;
+    }
+    @media (max-width: var(--bp-xs)) {
+      header h1 {
+        font-size: 1.5rem;
       }
-      .streaming-box {
-        height: auto;
+      .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+      .contact-form {
+        padding: 1rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="sidebar">
-      <img src="me2.JPG" alt="صورة شخصية">
-      <h2>أكرم فؤاد الصالحي</h2>
-      <p>طالب تكنولوجيا المعلومات ومطور برمجيات</p>
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="container nav-container">
+      <h1>أكرم فؤاد</h1>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="#hero">الرئيسية</a></li>
+          <li><a href="#summary">عنّي</a></li>
+          <li><a href="#education">التعليم</a></li>
+          <li><a href="#experience">الخبرة</a></li>
+          <li><a href="#projects">المشاريع</a></li>
+          <li><a href="#skills">المهارات</a></li>
+          <li><a href="#languages">اللغات</a></li>
+          <li><a href="#hobbies">الهوايات</a></li>
+          <li><a href="#chatbot">روبوت الدردشة</a></li>
+          <li><a href="#contact">تواصل</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-      <h3>معلومات الاتصال</h3>
-      <ul>
-        <li>الهاتف: 00967776549494</li>
-        <li>البريد: akramtoleb@gmail.com</li>
-        <li>الموقع: www.akram.com</li>
-      </ul>
+  <!-- HERO SECTION -->
+  <section id="hero" class="section">
+    <div class="container hero-grid">
+      <div class="hero-photo hidden">
+        <img src="me2.JPG" alt="صورة أكرم فؤاد" />
+      </div>
+      <div class="hero-intro hidden">
+        <h2>أكرم فؤاد الطالب الصالحي</h2>
+        <p>
+          طالب جامعي في تخصص تكنولوجيا المعلومات، ومطور ومهندس برمجيات
+          متعدد المهارات. متخصص في تطوير الأنظمة والتطبيقات العملية،
+          إدارة قواعد البيانات، وتحليل البيانات. أطمح لابتكار حلول تقنية
+          متكاملة وتحسين الأداء التقني للمشاريع.
+        </p>
+        <a href="#" class="btn">تحميل السيرة الذاتية</a>
+      </div>
+    </div>
+  </section>
 
-      <h3>المهارات</h3>
-      <ul>
-        <li>Java, Python, Flutter, Tkinter</li>
-        <li>SQL, Oracle, MySQL, SQLite, Access</li>
-        <li>Oracle Apex, Oracle Reports</li>
-        <li>Adobe Photoshop, Illustrator</li>
-        <li>Excel, PowerPoint</li>
-        <li>HTML, CSS, JavaScript</li>
-        <li>Data Analysis, AI, Networking, QR Code, Linux</li>
-        <li>تصميم واجهات مستخدم وتجربة مستخدم فعّالة</li>
-      </ul>
+  <!-- SUMMARY SECTION -->
+  <section id="summary" class="section">
+    <div class="container">
+      <h2 class="text-center">ملخص شخصي</h2>
+      <p class="hidden">
+        طالب جامعي ومطور ومهندس برمجيات متعدد المهارات، متخصص في تطوير
+        الأنظمة والتطبيقات العملية، إدارة قواعد البيانات، وتحليل البيانات.
+        لدي خبرة واسعة في تصميم واجهات المستخدم التفاعلية، الذكاء
+        الاصطناعي، هياكل البيانات، الشبكات، وتحليل نظم المعلومات.
+      </p>
+      <p class="hidden">
+        مهتم بابتكار حلول تقنية متكاملة وتحسين الأداء التقني للمشاريع
+        والأنظمة. أحب التحديات وأعمل باستمرار على توسيع خبراتي في أحدث
+        التقنيات وأطر العمل.
+      </p>
+    </div>
+  </section>
 
-      <h3>اللغات</h3>
-      <ul>
-        <li>العربية: اللغة الأم</li>
-        <li>الإنجليزية: جيد في التقنية والبرمجة</li>
+  <!-- EDUCATION SECTION -->
+  <section id="education" class="section">
+    <div class="container">
+      <h2 class="text-center">التعليم</h2>
+      <div class="edu-list">
+        <div class="edu-item hidden">
+          <h3>بكالوريوس في تكنولوجيا المعلومات</h3>
+          <p>الجامعة: جامعة الإيمان الجامعة الرازي</p>
+          <p>المستوى: طالب جامعي</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="text-center">الخبرات العملية</h2>
+      <div class="timeline">
+        <div class="exp-item hidden">
+          <h3>تطوير أنظمة باستخدام Java وPython وFlutter</h3>
+          <span>2019 – الآن</span>
+          <p>
+            تصميم وتنفيذ أنظمة متكاملة: نظام إدارة محطات الكهرباء،
+            نظام إدارة المستشفيات، نظام الصيدلة، ونظام الكافتيريا
+            عبر الويب.
+          </p>
+        </div>
+        <div class="exp-item hidden">
+          <h3>إنشاء واجهات مستخدم تفاعلية باستخدام Flutter وTkinter</h3>
+          <span>2020 – الآن</span>
+          <p>
+            تصميم واجهات جذابة وسهلة الاستخدام مع التركيز على تجربة المستخدم
+            والتوافق مع مختلف الأجهزة.
+          </p>
+        </div>
+        <div class="exp-item hidden">
+          <h3>تحليل البيانات وإنشاء التقارير باستخدام Excel وAccess وPowerPoint</h3>
+          <span>2020 – الآن</span>
+          <p>
+            استخراج البيانات وتحليلها وتقديمها بشكل مرئي وتقارير احترافية
+            لدعم اتخاذ القرار.
+          </p>
+        </div>
+        <div class="exp-item hidden">
+          <h3>تطوير تطبيقات وتقارير باستخدام Oracle Apex وOracle Reports</h3>
+          <span>2021 – الآن</span>
+          <p>
+            بناء تطبيقات ويب وتوليد تقارير ديناميكية لإدارة قواعد البيانات
+            والعمليات التشغيلية.
+          </p>
+        </div>
+        <div class="exp-item hidden">
+          <h3>تصميم ملفات Adobe Photoshop وIllustrator</h3>
+          <span>2018 – الآن</span>
+          <p>
+            تصميم شعارات، بطاقات تعريفية، مواد تسويقية، وعناصر واجهات
+            المستخدم.
+          </p>
+        </div>
+        <div class="exp-item hidden">
+          <h3>تحليل رموز QR وإدارة أنظمة التتبع</h3>
+          <span>2021 – الآن</span>
+          <p>
+            تنفيذ حلول مسح QR Code لمتابعة المنتجات والخدمات وتحسين سير
+            العمل.
+          </p>
+        </div>
+        <div class="exp-item hidden">
+          <h3>إدارة الشبكات وخوادم Linux</h3>
+          <span>2020 – الآن</span>
+          <p>
+            تثبيت وإعداد وإدارة خوادم Linux، ضبط الشبكات، ونشر الخدمات
+            والتطبيقات.
+          </p>
+        </div>
+        <div class="exp-item hidden">
+          <h3>تطبيق مفاهيم الذكاء الاصطناعي وهياكل البيانات</h3>
+          <span>2022 – الآن</span>
+          <p>
+            استخدام خوارزميات التعلم الآلي وهياكل البيانات لتحسين أداء
+            التطبيقات والتحليلات.
+          </p>
+        </div>
+        <div class="exp-item hidden">
+          <h3>البرمجة الكائنية: الوراثة، التجريد، التعدد الشكلي، والتغليف</h3>
+          <span>2019 – الآن</span>
+          <p>
+            تصميم برمجيات مرنة وقابلة للتوسع باستخدام مبادئ OOP في Java
+            وPython.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="text-center">أعمال ومشاريعي</h2>
+      <div class="projects-grid">
+        <div class="project-card hidden">
+          <h3>نظام محطات الكهرباء</h3>
+          <p>
+            نظام متكامل لإدارة المحطات الكهربائية: إدارة البيانات،
+            فواتير الاشتراكات، وتحليل الأداء.
+          </p>
+        </div>
+        <div class="project-card hidden">
+          <h3>نظام إدارة المستشفيات</h3>
+          <p>
+            إدارة بيانات المرضى، المواعيد، والتقارير الطبية مع واجهات
+            مستخدم سهلة الاستخدام.
+          </p>
+        </div>
+        <div class="project-card hidden">
+          <h3>نظام الصيدلة</h3>
+          <p>
+            إدارة المبيعات، المخزون، والوصفات الطبية مع دعم تحليل البيانات
+            وتقارير مفصلة.
+          </p>
+        </div>
+        <div class="project-card hidden">
+          <h3>نظام الكافتيريا (Web)</h3>
+          <p>
+            نظام لإدارة الطلبات، المخزون، والمبيعات عبر الويب بواجهات
+            تفاعلية وتحليل بيانات المبيعات.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="text-center">المهارات التقنية</h2>
+      <div class="skills-grid">
+        <div class="skill-item hidden">
+          <span>Java</span>
+          <div class="skill-bar"><div data-skill="85%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>Python</span>
+          <div class="skill-bar"><div data-skill="90%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>Flutter</span>
+          <div class="skill-bar"><div data-skill="80%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>Tkinter</span>
+          <div class="skill-bar"><div data-skill="70%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>Oracle Apex</span>
+          <div class="skill-bar"><div data-skill="75%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>Oracle Reports</span>
+          <div class="skill-bar"><div data-skill="70%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>Photoshop & Illustrator</span>
+          <div class="skill-bar"><div data-skill="65%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>Excel, Access, PowerPoint</span>
+          <div class="skill-bar"><div data-skill="80%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>SQL (Oracle, MySQL, SQL Server, SQLite)</span>
+          <div class="skill-bar"><div data-skill="85%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>Linux & Networking</span>
+          <div class="skill-bar"><div data-skill="75%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>AI & Data Structures</span>
+          <div class="skill-bar"><div data-skill="70%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>QR Code Tracking</span>
+          <div class="skill-bar"><div data-skill="60%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANGUAGES SECTION -->
+  <section id="languages" class="section">
+    <div class="container">
+      <h2 class="text-center">اللغات</h2>
+      <div class="lang-list">
+        <div class="lang-item hidden">
+          <h3>العربية</h3>
+          <span>اللغة الأم</span>
+        </div>
+        <div class="lang-item hidden">
+          <h3>الإنجليزية</h3>
+          <span>جيد في التقنية والبرمجة</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOBBIES SECTION -->
+  <section id="hobbies" class="section">
+    <div class="container">
+      <h2 class="text-center">الهوايات والاهتمامات</h2>
+      <ul class="hobbies-list">
+        <li class="hobby-item hidden">متابعة أحدث التقنيات والبرمجيات</li>
+        <li class="hobby-item hidden">تطوير مشاريع برمجية شخصية وعملية</li>
+        <li class="hobby-item hidden">تصميم أنظمة متكاملة لتسهيل الأعمال اليومية</li>
       </ul>
     </div>
+  </section>
 
-    <div class="main" id="main-content">
-      <!-- يتم إضافة الأقسام ديناميكياً عبر JS -->
+  <!-- CHATBOT SECTION -->
+  <section id="chatbot" class="section">
+    <div class="container">
+      <h2 class="text-center">روبوت الدردشة التفاعلي</h2>
+      <div class="chatbot-container hidden">
+        <div class="chat-window"></div>
+        <div class="chat-input">
+          <input type="text" id="userInput" placeholder="اكتب رسالتك هنا..." />
+          <button id="sendBtn">إرسال</button>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <footer class="footer">
-    © 2025 أكرم فؤاد الصالحي - جميع الحقوق محفوظة
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="text-center">تواصل معي</h2>
+      <form class="contact-form hidden">
+        <input type="text" name="name" placeholder="اسمك" required />
+        <input type="email" name="email" placeholder="بريدك الإلكتروني" required />
+        <textarea name="message" rows="4" placeholder="رسالتك..." required></textarea>
+        <button type="submit">إرسال</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container text-center">
+      <p>© 2025 أكرم فؤاد الطالب الصالحي. جميع الحقوق محفوظة.</p>
+    </div>
   </footer>
 
+  <!-- SCROLL-TO-TOP BUTTON -->
+  <button id="scrollTop" aria-label="Scroll to top">↑</button>
+
+  <!-- SCRIPTS -->
   <script>
-    // بيانات الأقسام
-    const sections = [
-      {
-        title: "الملخص الشخصي",
-        content: "طالب جامعي ومطور ومهندس برمجيات متعدد المهارات، متخصص في تطوير الأنظمة والتطبيقات العملية، إدارة قواعد البيانات، وتحليل البيانات. لدي خبرة واسعة في تصميم واجهات المستخدم التفاعلية، الذكاء الاصطناعي، هياكل البيانات، الشبكات، وتحليل نظم المعلومات. مهتم بابتكار حلول تقنية متكاملة وتحسين الأداء التقني للمشاريع والأنظمة."
-      },
-      {
-        title: "الأعمال والمشاريع",
-        content: [
-          "نظام محطات الكهرباء: نظام متكامل لإدارة المحطات والفواتير والاشتراكات.",
-          "نظام إدارة المستشفيات: إدارة بيانات المرضى والمواعيد والتقارير الطبية.",
-          "نظام الصيدلية: إدارة المبيعات والمخزون والوصفات الطبية مع تحليل البيانات.",
-          "نظام الكافتيريا (Web): إدارة الطلبات والمبيعات والمخزون عبر الويب بواجهة تفاعلية."
-        ]
-      },
-      {
-        title: "الخبرات العملية",
-        content: [
-          "تطوير أنظمة باستخدام Java, Python, Flutter",
-          "إنشاء واجهات مستخدم تفاعلية باستخدام Flutter وTkinter",
-          "تحليل البيانات وإعداد التقارير باستخدام Excel, Access, PowerPoint",
-          "تطوير تطبيقات وتقارير باستخدام Oracle Apex وOracle Reports",
-          "تصميم ملفات Adobe Photoshop وIllustrator",
-          "تحليل QR Codes وإدارة أنظمة التتبع",
-          "الشبكات وأنظمة Linux لإدارة السيرفرات والتطبيقات",
-          "تطبيق مفاهيم الذكاء الاصطناعي وهياكل البيانات والبرمجة الكائنية"
-        ]
-      },
-      {
-        title: "الهوايات والاهتمامات",
-        content: [
-          "متابعة أحدث التقنيات والبرمجيات",
-          "تطوير مشاريع برمجية شخصية وعملية",
-          "تصميم أنظمة متكاملة لتسهيل الأعمال اليومية"
-        ]
-      },
-      {
-        title: "تطبيق Chat Bot",
-        content: "<div class='streaming-box' id='streaming-box'></div>"
-      }
-    ];
-
-    // بناء المحتوى ديناميكياً
-    const mainContent = document.getElementById('main-content');
-    sections.forEach(section => {
-      const wrap = document.createElement('div');
-      wrap.className = 'section-container';
-
-      const h3 = document.createElement('h3');
-      h3.textContent = section.title;
-      wrap.appendChild(h3);
-
-      if (Array.isArray(section.content)) {
-        const ul = document.createElement('ul');
-        section.content.forEach(text => {
-          const li = document.createElement('li');
-          li.textContent = text;
-          ul.appendChild(li);
-        });
-        wrap.appendChild(ul);
-      } else {
-        const p = document.createElement('p');
-        p.innerHTML = section.content;
-        wrap.appendChild(p);
-      }
-
-      mainContent.appendChild(wrap);
+    // NAV TOGGLE FOR MOBILE
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('nav ul');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('open');
+      toggle.classList.toggle('active');
     });
 
-    // تأثير الظهور عند التمرير
-    const reveals = document.querySelectorAll('.section-container');
-    function revealOnScroll() {
-      const trigger = window.innerHeight * 0.85;
-      reveals.forEach(sec => {
-        if (sec.getBoundingClientRect().top < trigger) {
-          sec.classList.add('visible');
+    // SCROLL REVEAL USING IntersectionObserver
+    const revealElements = document.querySelectorAll('.hidden');
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+    const revealOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
       });
-    }
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
+    }, observerOptions);
+    revealElements.forEach(el => revealOnScroll.observe(el));
 
-    // بث رسالة Chat Bot حرفاً حرفاً
-    const messages = [
-      "مرحبا بك في سيرتي الذاتية التفاعلية! ",
-      "أنا أكرم فؤاد الصالحي، طالب ومطور برمجيات. ",
-      "يمكنك متابعة مشاريعي وخبراتي مباشرة هنا. ",
-      "سأضيف تحديثات ومشاريع جديدة باستمرار. ",
-      "تطبيق Chat Bot للتفاعل والإجابة على استفساراتك. ",
-      "شكراً لزيارتك!"
-    ];
-    let msgIndex = 0, charIndex = 0;
-    function streamText() {
-      const box = document.getElementById('streaming-box');
-      if (msgIndex < messages.length) {
-        if (charIndex < messages[msgIndex].length) {
-          box.textContent += messages[msgIndex][charIndex++];
-          box.scrollTop = box.scrollHeight;
-          setTimeout(streamText, 50);
-        } else {
-          msgIndex++;
-          charIndex = 0;
-          box.textContent += "\n";
-          setTimeout(streamText, 300);
-        }
-      }
+    // SKILLS BAR ANIMATION
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.skill-bar > div').forEach(bar => {
+        const pct = bar.getAttribute('data-skill');
+        bar.style.width = pct;
+      });
+    });
+
+    // SCROLL-TO-TOP BUTTON
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) scrollBtn.style.display = 'block';
+      else scrollBtn.style.display = 'none';
+    });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // CONTACT FORM SUBMISSION (SIMULATION)
+    const form = document.querySelector('.contact-form');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      alert('تم إرسال رسالتك بنجاح!');
+      form.reset();
+    });
+
+    // CHATBOT BASIC LOGIC
+    const chatWindow = document.querySelector('.chat-window');
+    const userInput = document.getElementById('userInput');
+    const sendBtn = document.getElementById('sendBtn');
+    function appendMessage(text, sender) {
+      const msgEl = document.createElement('div');
+      msgEl.classList.add('message', sender);
+      const textEl = document.createElement('div');
+      textEl.classList.add('text');
+      textEl.textContent = text;
+      msgEl.appendChild(textEl);
+      chatWindow.appendChild(msgEl);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
     }
-    window.addEventListener('load', streamText);
+    sendBtn.addEventListener('click', () => {
+      const msg = userInput.value.trim();
+      if (!msg) return;
+      appendMessage(msg, 'user');
+      userInput.value = '';
+      setTimeout(() => {
+        // ردود بسيطة تجريبية
+        const botReply = 'شكراً لسؤالك، سأعالج طلبك قريباً.';
+        appendMessage(botReply, 'bot');
+      }, 1000);
+    });
   </script>
 </body>
 </html>
+```
