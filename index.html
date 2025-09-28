@@ -530,14 +530,12 @@ border-radius: 16px 10px 16px 0px;
         width: 300px;
         height: 300px;
         }
-        /* ================================
-        SKILLS SECTION
-        /* ================================ */
-        #skills h2 {
+        /* ================================*/
+      #skills h2 {
         color: var(--clr-primary);
         margin-bottom: 2rem;
         }
-        /* .skills-grid {
+        .skills-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
@@ -554,21 +552,20 @@ border-radius: 16px 10px 16px 0px;
         font-family: var(--ff-alt);
         color: var(--clr-dark);
         font-size: 0.95rem;
-        } */
-        /* .skill-bar {
+        }
+        .skill-bar {
         width: 100%;
         background: var(--clr-gray);
         height: 0.75rem;
         border-radius: 4px;
         overflow: hidden;
-        } */
-        /* .skill-bar > div {
+        }
+        .skill-bar > div {
         height: 100%;
         background: var(--clr-secondary);
         width: 0;
         transition: width 1.2s ease-out;
-        }  */
-
+        }
         /* ================================
         LANGUAGES SECTION
         ================================ */
@@ -870,7 +867,6 @@ border-radius: 16px 10px 16px 0px;
   color: #f87171; /* نص أحمر */
   margin-bottom: 2rem;
 }
-
 .tech-skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -897,7 +893,6 @@ border-radius: 16px 10px 16px 0px;
   font-size: 1rem;
   margin-bottom: 0.5rem;
 }
-
 .tech-skill-progress {
   width: 100%;
   height: 10px;
@@ -905,7 +900,6 @@ border-radius: 16px 10px 16px 0px;
   border-radius: 5px;
   overflow: hidden;
 }
-
 .tech-progress-bar {
   width: 0;
   height: 100%;
@@ -1122,196 +1116,63 @@ border-radius: 16px 10px 16px 0px;
     </div>
   </section>
 
-<section id="tech-skills-section">
-  <div class="tech-container">
-    <h2 class="tech-section-title">المهارات التقنية</h2>
-    <div class="tech-skills-grid">
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">Java</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="85%"></div>
+ <!-- SKILLS SECTION -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="text-center">المهارات التقنية</h2>
+      <div class="skills-grid">
+        <div class="skill-item hidden">
+          <span>Java</span>
+          <div class="skill-bar"><div data-skill="85%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>Python</span>
+          <div class="skill-bar"><div data-skill="90%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>Flutter</span>
+          <div class="skill-bar"><div data-skill="80%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>Tkinter</span>
+          <div class="skill-bar"><div data-skill="70%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>Oracle Apex</span>
+          <div class="skill-bar"><div data-skill="75%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>Oracle Reports</span>
+          <div class="skill-bar"><div data-skill="70%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>Photoshop & Illustrator</span>
+          <div class="skill-bar"><div data-skill="65%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>Excel, Access, PowerPoint</span>
+          <div class="skill-bar"><div data-skill="80%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>SQL (Oracle, MySQL, SQL Server, SQLite)</span>
+          <div class="skill-bar"><div data-skill="85%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>Linux & Networking</span>
+          <div class="skill-bar"><div data-skill="75%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>AI & Data Structures</span>
+          <div class="skill-bar"><div data-skill="70%"></div></div>
+        </div>
+        <div class="skill-item hidden">
+          <span>QR Code Tracking</span>
+          <div class="skill-bar"><div data-skill="60%"></div></div>
         </div>
       </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">Python</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="90%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">C#</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="80%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">PHP</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="75%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">JavaScript (JS)</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="85%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">HTML5 / CSS3</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="90%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">Dart (Flutter)</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="80%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">Oracle Database</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="85%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">MySQL</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="80%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">SQL Server</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="75%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">SQLite</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="70%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">Oracle APEX</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="75%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">Oracle APEX Reports</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="70%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">Laravel + Filament</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="80%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">Bootstrap</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="85%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">Tailwind CSS</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="80%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">Photoshop</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="65%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">Illustrator</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="65%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">Premiere Pro</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="60%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">After Effects</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="60%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">Word</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="85%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">Excel</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="85%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">PowerPoint</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="80%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">Access</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="80%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">AI - أساسيات وفهم</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="70%"></div>
-        </div>
-      </div>
-
-      <div class="tech-skill-card tech-hidden">
-        <span class="tech-skill-name">AI - تطبيق عملي</span><br>
-        <div class="tech-skill-progress">
-          <div class="tech-progress-bar" data-skill="65%"></div>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
+
 
   <!-- LANGUAGES SECTION -->
   <section id="languages" class="section">
@@ -1479,6 +1340,41 @@ border-radius: 16px 10px 16px 0px;
   }
   window.addEventListener('load', typeWriter);
 </script>
+
+
+
+
+
+<script>
+  // ================= SCROLL REVEAL + SKILLS BAR ANIMATION =================
+  const skillCards = document.querySelectorAll(".tech-skill-card");
+
+  const techObserverOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.2
+  };
+
+  const revealSkills = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("tech-visible");
+
+        // تحريك شريط التقدم عند ظهور الكرت
+        const bar = entry.target.querySelector(".tech-progress-bar");
+        if (bar) {
+          const value = bar.getAttribute("data-skill");
+          bar.style.width = value;
+        }
+
+        observer.unobserve(entry.target);
+      }
+    });
+  }, techObserverOptions);
+
+  skillCards.forEach(card => revealSkills.observe(card));
+</script>
+
 
 </body>
 </html>
