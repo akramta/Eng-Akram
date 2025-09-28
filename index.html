@@ -107,7 +107,10 @@
   line-height: 1.6;
   color: var(--text);
 }
-
+.exp-item p .skill  {
+background-color:rgb(12, 230, 246);
+color: rgb(24, 24, 24)
+}
 .exp-item:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 20px 60px rgba(0,0,0,0.6);
@@ -297,7 +300,7 @@
 }
 
 .hero-photo {
-    border-radius: 15px 50px 15px 50px;
+    border-radius: 10px 40px 10px 50px;
     overflow: hidden;
     /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); */
     box-shadow: 0 15px 40px rgba(0,0,0,0.35);
@@ -524,12 +527,12 @@
         }
         /* ================================
         SKILLS SECTION
-        ================================ */
+        /* ================================ */
         #skills h2 {
         color: var(--clr-primary);
         margin-bottom: 2rem;
         }
-        .skills-grid {
+        /* .skills-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
@@ -546,20 +549,21 @@
         font-family: var(--ff-alt);
         color: var(--clr-dark);
         font-size: 0.95rem;
-        }
-        .skill-bar {
+        } */
+        /* .skill-bar {
         width: 100%;
         background: var(--clr-gray);
         height: 0.75rem;
         border-radius: 4px;
         overflow: hidden;
-        }
-        .skill-bar > div {
+        } */
+        /* .skill-bar > div {
         height: 100%;
         background: var(--clr-secondary);
         width: 0;
         transition: width 1.2s ease-out;
-        }
+        }  */
+
         /* ================================
         LANGUAGES SECTION
         ================================ */
@@ -804,6 +808,108 @@
             padding: 1rem;
         }
         }
+        .skill {
+  display: inline-block;
+  margin: 4px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* #skills {
+  padding: 2.5rem 1rem;
+  background: #f9fafb;
+  font-family: Arial, sans-serif;
+} */
+
+#skills h2.text-center {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: #1e40af;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.exp-item h3 {
+  font-size: 1.2rem;
+  color: #1e40af;
+  margin-bottom: 0.8rem;
+}
+
+.exp-item p {
+  display: flex;
+  flex-wrap: nowrap; /* كل المهارات في صف واحد */
+  gap: 0.6rem;
+  overflow-x: auto; /* تمرير أفقي عند الحاجة */
+  padding-bottom: 0.3rem;
+  margin: 0;
+}
+
+/* ============================ */
+#tech-skills-section {
+  padding: 3rem 1rem;
+  background: #111827; /* خلفية داكنة جدا */
+  font-family: Arial, sans-serif;
+}
+
+.tech-section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #f87171; /* نص أحمر */
+  margin-bottom: 2rem;
+}
+
+.tech-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.tech-skill-card {
+  background: rgba(255,255,255,0.05);
+  padding: 1rem;
+  border-radius: 12px;
+  color: #f87171; /* نص أحمر */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.tech-skill-card.tech-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tech-skill-name {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.tech-skill-progress {
+  width: 100%;
+  height: 10px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.tech-progress-bar {
+  width: 0;
+  height: 100%;
+  background: #3b82f6;
+  border-radius: 5px;
+  transition: width 1s ease-in-out;
+}
+
+
     </style>
 </head>
 <body>
@@ -817,6 +923,7 @@
         <span></span>
         <span></span>
       </button>
+      
       <nav>
         <ul>
           <li><a href="#hero">الرئيسية</a></li>
@@ -886,87 +993,86 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE SECTION -->
-  <section id="experience" class="section">
-    <div class="container">
-      <h2 class="text-center">الخبرات العملية</h2>
-      <div class="timeline">
-        <div class="exp-item hidden">
-          <h3>تطوير أنظمة باستخدام Java وPython وFlutter</h3>
-          <span>2019 – الآن</span>
-          <p>
-            تصميم وتنفيذ أنظمة متكاملة: نظام إدارة محطات الكهرباء،
-            نظام إدارة المستشفيات، نظام الصيدلة، ونظام الكافتيريا
-            عبر الويب.
-          </p>
-        </div>
-        <div class="exp-item hidden">
-          <h3>إنشاء واجهات مستخدم تفاعلية باستخدام Flutter وTkinter</h3>
-          <span>2020 – الآن</span>
-          <p>
-            تصميم واجهات جذابة وسهلة الاستخدام مع التركيز على تجربة المستخدم
-            والتوافق مع مختلف الأجهزة.
-          </p>
-        </div>
-        <div class="exp-item hidden">
-          <h3>تحليل البيانات وإنشاء التقارير باستخدام Excel وAccess وPowerPoint</h3>
-          <span>2020 – الآن</span>
-          <p>
-            استخراج البيانات وتحليلها وتقديمها بشكل مرئي وتقارير احترافية
-            لدعم اتخاذ القرار.
-          </p>
-        </div>
-        <div class="exp-item hidden">
-          <h3>تطوير تطبيقات وتقارير باستخدام Oracle Apex وOracle Reports</h3>
-          <span>2021 – الآن</span>
-          <p>
-            بناء تطبيقات ويب وتوليد تقارير ديناميكية لإدارة قواعد البيانات
-            والعمليات التشغيلية.
-          </p>
-        </div>
-        <div class="exp-item hidden">
-          <h3>تصميم ملفات Adobe Photoshop وIllustrator</h3>
-          <span>2018 – الآن</span>
-          <p>
-            تصميم شعارات، بطاقات تعريفية، مواد تسويقية، وعناصر واجهات
-            المستخدم.
-          </p>
-        </div>
-        <div class="exp-item hidden">
-          <h3>تحليل رموز QR وإدارة أنظمة التتبع</h3>
-          <span>2021 – الآن</span>
-          <p>
-            تنفيذ حلول مسح QR Code لمتابعة المنتجات والخدمات وتحسين سير
-            العمل.
-          </p>
-        </div>
-        <div class="exp-item hidden">
-          <h3>إدارة الشبكات وخوادم Linux</h3>
-          <span>2020 – الآن</span>
-          <p>
-            تثبيت وإعداد وإدارة خوادم Linux، ضبط الشبكات، ونشر الخدمات
-            والتطبيقات.
-          </p>
-        </div>
-        <div class="exp-item hidden">
-          <h3>تطبيق مفاهيم الذكاء الاصطناعي وهياكل البيانات</h3>
-          <span>2022 – الآن</span>
-          <p>
-            استخدام خوارزميات التعلم الآلي وهياكل البيانات لتحسين أداء
-            التطبيقات والتحليلات.
-          </p>
-        </div>
-        <div class="exp-item hidden">
-          <h3>البرمجة الكائنية: الوراثة، التجريد، التعدد الشكلي، والتغليف</h3>
-          <span>2019 – الآن</span>
-          <p>
-            تصميم برمجيات مرنة وقابلة للتوسع باستخدام مبادئ OOP في Java
-            وPython.
-          </p>
-        </div>
+<section id="skills" class="section">
+  <div class="container">
+    <h2 class="text-center">المهارات التقنية</h2>
+    <div class="timeline">
+
+      <div class="exp-item hidden">
+        <h3>💻 لغات البرمجة</h3>
+        <p>
+          <span class="skill java">Java</span>
+          <span class="skill python">Python</span>
+          <span class="skill csharp">#C</span>
+          <span class="skill php">PHP</span>
+          <span class="skill html">HTML</span>
+          <span class="skill js">CSS</span>
+          <span class="skill html">JavaScript</span>
+
+          <span class="skill dart">Flutter</span>
+        </p>
       </div>
+
+      <div class="exp-item hidden">
+        <h3>🗄️ قواعد البيانات</h3>
+        <p>
+          <span class="skill oracle">Oracle</span>
+          <span class="skill mysql">MySQL</span>
+          <span class="skill sqlserver">SQL Server</span>
+          <span class="skill sqlite">SQLite</span>
+         
+        </p>
+      </div>
+
+      <div class="exp-item hidden">
+        <h3>🌐 أدوات وتطبيقات أوراكل</h3>
+        <p>
+          <span class="skill apex">Oracle Database</span>
+          <span class="skill apex">Oracle APEX</span>
+          <span class="skill reports">Oracle APEX Reports</span>
+        </p>
+      </div>
+
+      <div class="exp-item hidden">
+        <h3>🖥️ تطوير الويب</h3>
+        <p>
+          <span class="skill laravel">Laravel + Filament</span>
+          <span class="skill bootstrap">Bootstrap</span>
+          <span class="skill tailwind">Tailwind CSS</span>
+        </p>
+      </div>
+
+      <div class="exp-item hidden">
+        <h3>🎨 برامج أدوبي (Adobe)</h3>
+        <p>
+          <span class="skill ps">Photoshop</span>
+          <span class="skill ai">Illustrator</span>
+          <span class="skill pr">Premiere Pro</span>
+          <span class="skill ae">After Effects</span>
+        </p>
+      </div>
+
+      <div class="exp-item hidden">
+        <h3>📊 برامج مايكروسوفت (Microsoft Office)</h3>
+        <p>
+          <span class="skill word">Word</span>
+          <span class="skill excel">Excel</span>
+          <span class="skill ppt">PowerPoint</span>
+          <span class="skill access">Access</span>
+        </p>
+      </div>
+
+      <div class="exp-item hidden">
+        <h3>🤖 الذكاء الاصطناعي</h3>
+        <p>
+          <span class="skill ai-basic">فهم أساسيات الذكاء الاصطناعي</span>
+          <span class="skill ai-apps">تطبيقه في تصميم الأنظمة والمواقع</span>
+        </p>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- PROJECTS SECTION -->
   <section id="projects" class="section">
@@ -1001,66 +1107,206 @@
             تفاعلية وتحليل بيانات المبيعات.
           </p>
         </div>
+        <div class="project-card hidden">
+          <h3>أنظمة حسب الطلب</h3>
+          <p>
+            أنظمة حسب الطلب متعدد المنصات
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SKILLS SECTION -->
-  <section id="skills" class="section">
-    <div class="container">
-      <h2 class="text-center">المهارات التقنية</h2>
-      <div class="skills-grid">
-        <div class="skill-item hidden">
-          <span>Java</span>
-          <div class="skill-bar"><div data-skill="85%"></div></div>
-        </div>
-        <div class="skill-item hidden">
-          <span>Python</span>
-          <div class="skill-bar"><div data-skill="90%"></div></div>
-        </div>
-        <div class="skill-item hidden">
-          <span>Flutter</span>
-          <div class="skill-bar"><div data-skill="80%"></div></div>
-        </div>
-        <div class="skill-item hidden">
-          <span>Tkinter</span>
-          <div class="skill-bar"><div data-skill="70%"></div></div>
-        </div>
-        <div class="skill-item hidden">
-          <span>Oracle Apex</span>
-          <div class="skill-bar"><div data-skill="75%"></div></div>
-        </div>
-        <div class="skill-item hidden">
-          <span>Oracle Reports</span>
-          <div class="skill-bar"><div data-skill="70%"></div></div>
-        </div>
-        <div class="skill-item hidden">
-          <span>Photoshop & Illustrator</span>
-          <div class="skill-bar"><div data-skill="65%"></div></div>
-        </div>
-        <div class="skill-item hidden">
-          <span>Excel, Access, PowerPoint</span>
-          <div class="skill-bar"><div data-skill="80%"></div></div>
-        </div>
-        <div class="skill-item hidden">
-          <span>SQL (Oracle, MySQL, SQL Server, SQLite)</span>
-          <div class="skill-bar"><div data-skill="85%"></div></div>
-        </div>
-        <div class="skill-item hidden">
-          <span>Linux & Networking</span>
-          <div class="skill-bar"><div data-skill="75%"></div></div>
-        </div>
-        <div class="skill-item hidden">
-          <span>AI & Data Structures</span>
-          <div class="skill-bar"><div data-skill="70%"></div></div>
-        </div>
-        <div class="skill-item hidden">
-          <span>QR Code Tracking</span>
-          <div class="skill-bar"><div data-skill="60%"></div></div>
+<section id="tech-skills-section">
+  <div class="tech-container">
+    <h2 class="tech-section-title">المهارات التقنية</h2>
+    <div class="tech-skills-grid">
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">Java</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="85%"></div>
         </div>
       </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">Python</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="90%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">C#</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="80%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">PHP</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="75%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">JavaScript (JS)</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="85%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">HTML5 / CSS3</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="90%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">Dart (Flutter)</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="80%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">Oracle Database</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="85%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">MySQL</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="80%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">SQL Server</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="75%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">SQLite</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="70%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">Oracle APEX</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="75%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">Oracle APEX Reports</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="70%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">Laravel + Filament</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="80%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">Bootstrap</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="85%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">Tailwind CSS</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="80%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">Photoshop</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="65%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">Illustrator</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="65%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">Premiere Pro</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="60%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">After Effects</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="60%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">Word</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="85%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">Excel</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="85%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">PowerPoint</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="80%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">Access</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="80%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">AI - أساسيات وفهم</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="70%"></div>
+        </div>
+      </div>
+
+      <div class="tech-skill-card tech-hidden">
+        <span class="tech-skill-name">AI - تطبيق عملي</span><br>
+        <div class="tech-skill-progress">
+          <div class="tech-progress-bar" data-skill="65%"></div>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- LANGUAGES SECTION -->
   <section id="languages" class="section">
@@ -1073,7 +1319,7 @@
         </div>
         <div class="lang-item hidden">
           <h3>الإنجليزية</h3>
-          <span>جيد في التقنية والبرمجة</span>
+          <span>جيد جدا في التقنية والبرمجة</span>
         </div>
       </div>
     </div>
@@ -1121,6 +1367,11 @@
   <!-- FOOTER -->
   <footer>
     <div class="container text-center">
+      <p>الهاتف 00697765494949</p>
+      <i>البريد الالكتروني: akramtole@gmail.com</i>
+      <link rel="stylesheet" href="akramtole@gmail.com">
+    </div>
+        <div class="container text-center">
       <p>© 2025 أكرم فؤاد الصالحي. جميع الحقوق محفوظة.</p>
     </div>
   </footer>
